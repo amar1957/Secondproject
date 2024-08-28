@@ -1,0 +1,254 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  overflow-x: hidden;
+}
+.landing {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.353);
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 500ms;
+}
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+  position: relative;
+  transition-duration: 500ms;
+  border: solid 1px black;
+  overflow: hidden;
+}
+button:hover {
+  color: white;
+}
+button::after {
+  content: "";
+  position: absolute;
+  border-radius: 14px;
+  height: 100%;
+  width: 0;
+  background-color: black;
+  left: 0;
+  top: 0;
+  transition-duration: 500ms;
+  z-index: -10;
+}
+button:hover::after {
+  width: 100%;
+}
+/* Start Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+.header .logo {
+  margin-right: 50px;
+}
+.header .menu {
+  position: relative;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+}
+.header .nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  transition-property: right;
+  transition-duration: 500ms;
+  background-color: rgba(255, 255, 255, 0.379);
+  backdrop-filter: blur(30px);
+}
+.header .nav .links {
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .nav .links .box {
+  margin-right: 20px;
+  position: relative;
+}
+.header .nav .links .box .toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.header .nav .links .box .toggle img {
+  transition-duration: 500ms;
+}
+.header .nav .links .box .toggle span {
+  margin-right: 10px;
+}
+/* Start Content */
+.header .nav .links .box .content {
+  position: absolute;
+  top: 35px;
+  box-shadow: 0px 0px 5px 5px rgb(228, 228, 228);
+  border-radius: 15px;
+  width: fit-content;
+  padding: 15px;
+  z-index: 999;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  transition-duration: 500ms;
+  display: none;
+  background-color: white;
+}
+.header .nav .links .box .firstContent {
+  right: 0;
+  width: 150px;
+}
+.header .nav .links .box .custom {
+  width: 100px;
+}
+/* End Content */
+.header .nav .links .box .content .childContent {
+  margin-bottom: 10px;
+}
+.header .nav .links .box .none {
+  margin-bottom: 0 !important;
+}
+.header .nav .links .box .content .childContent img {
+  margin-right: 5px;
+}
+.header .nav .links .box .custom span {
+  margin-bottom: 10px;
+  display: block;
+}
+.header .nav .login {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.header .nav .login a {
+  margin-right: 30px;
+  font-size: 20px;
+}
+.header .nav .login button {
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 16px;
+  background-color: transparent;
+}
+/* End Header */
+@media (max-width: 768px) {
+  .header .menu {
+    display: block;
+  }
+  .header .nav {
+    position: fixed;
+    top: 0;
+    opacity: 1 !important;
+    height: 100vh;
+    width: 250px;
+    padding: 15px;
+    right: -250px;
+    align-items: start;
+    padding-top: 50px;
+    align-content: start;
+  }
+  .header .nav .links .box {
+    margin-bottom: 20px;
+  }
+  .header .nav .links .box .content {
+    box-shadow: none;
+    position: relative;
+    padding: 15px 0px 0px 15px;
+    background-color: transparent;
+    top: 0;
+  }
+  .header .nav .links {
+    flex-direction: column;
+  }
+  .header .nav .login {
+    width: 100%;
+    flex-direction: column;
+  }
+  .header .nav .login a {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .header .nav .login button {
+    width: 100%;
+    border: solid 1px black;
+  }
+}
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column-reverse;
+  }
+}
+.section {
+  padding: 15px;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+.section .left {
+  max-width: 420px;
+}
+.section .left .text h1 {
+  font-size: 70px;
+  margin-bottom: 50px;
+}
+.section .left .text p {
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 350px;
+}
+.section .left .text button {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-bottom: 100px;
+  background-color: transparent;
+}
+.section .left .imgs {
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.section .right {
+  max-width: 400px;
+}
+.section .right img {
+  width: 100%;
+}
+/* End Section */
+/* ========================================================== */
+/* backdrop and filter راجع القيم ال px كبيره وصغيره */
+/* راجع ال fixed */
+/* Start Section */
+/* راجع لما تطبع الديسبلاي */
+/* ازاي تجيب طول الصفحه كلها */
+/* شوف لما بتعمل فيكسد بياخد الطول كله */
+/* pointer event ده تعطيل المؤشر بس وايه علاقته مع ال landing */
+/* وراجع الثغره */
+/* راجع لما تخفي عنصر بالطول بتعمل بادنيج للابن بيتحسب للاب ولا لا */
